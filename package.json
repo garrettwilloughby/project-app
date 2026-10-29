@@ -1,0 +1,19 @@
+{
+  "name": "starter",
+  "private": true,
+  "workspaces": [
+    "app",
+    "api",
+    "shared"
+  ],
+  "scripts": {
+    "db:up": "docker compose up -d db",
+    "db:down": "docker compose down",
+    "db:migrate": "docker compose run --rm liquibase",
+    "dev:api": "npm run dev -w @starter/api",
+    "dev:app": "npm run start -w @starter/app",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  }
+}

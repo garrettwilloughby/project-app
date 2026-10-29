@@ -1,0 +1,5 @@
+# Add new changesets as new files in changes/. Never edit one that has run.
+databaseChangeLog:
+  - includeAll:
+      path: changes/
+      relativeToChangelogFile: true
