@@ -19,3 +19,11 @@ android/
 *.tfstate.*
 *.tfvars
 !example.tfvars
+
+# Claude
+.claude/
+# Claude Code: local only, never committed
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md

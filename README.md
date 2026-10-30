@@ -2,11 +2,11 @@
 
 | Path            | What                                                                                                               |
 | --------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `app/`          | React Native + Expo Router, TypeScript                                                                             |
+| `client/`          | React Native + Expo Router, TypeScript                                                                             |
 | `api/`          | Express, TypeScript. `app.ts` is the app, `server.ts` runs it locally (a Lambda adapter wraps `app.ts` in block 2) |
 | `shared/`       | zod schemas used by both the API and the app                                                                       |
-| `db/changelog/` | Liquibase changesets. One file per change; never edit one that has run                                             |
-| `infra/`        | Terraform (block 2)                                                                                                |
+| `sql/changelog/` | Liquibase changesets. One file per change; never edit one that has run                                             |
+| `terraform/`        | Terraform (block 2)                                                                                                |
 
 ## Local dev
 
