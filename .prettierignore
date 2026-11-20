@@ -1,0 +1,3 @@
+# Prettier already skips everything in .gitignore. These are tracked but generated.
+package-lock.json
+**/.terraform.lock.hcl
