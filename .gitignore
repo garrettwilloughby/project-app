@@ -19,6 +19,9 @@ android/
 *.tfstate.*
 *.tfvars
 !example.tfvars
+!dev.tfvars
+!prod.tfvars
+backend-*.hcl
 
 # Claude
 .claude/

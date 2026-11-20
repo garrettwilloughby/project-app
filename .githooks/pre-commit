@@ -1,0 +1,14 @@
+#!/bin/sh
+# Runs before every commit. If any step fails, the commit is cancelled.
+# Skip once, in an emergency: git commit --no-verify
+
+# 1. Block commits that contain secrets. Scans only staged changes.
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "gitleaks not installed: brew install gitleaks" >&2
+  exit 1
+fi
+gitleaks git --pre-commit --staged --verbose --redact || exit 1
+
+# 2. Format staged files (Prettier, terraform fmt) and add the fixes to the commit.
+#    Config is under "lint-staged" in package.json.
+npx --no-install lint-staged

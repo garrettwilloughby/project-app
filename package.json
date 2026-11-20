@@ -14,6 +14,17 @@
     "dev:app": "npm run start -w @starter/app",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present"
+    "lint": "npm run lint --workspaces --if-present",
+    "prepare": "git config core.hooksPath .githooks",
+    "format": "prettier --write . && terraform fmt -recursive terraform",
+    "format:check": "prettier --check . && terraform fmt -recursive -check terraform"
+  },
+  "devDependencies": {
+    "lint-staged": "^17.6.1",
+    "prettier": "^3.10.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md,yml,yaml,css}": "prettier --write",
+    "*.{tf,tfvars}": "terraform fmt"
   }
 }
