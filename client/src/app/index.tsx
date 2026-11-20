@@ -5,9 +5,7 @@ import { HealthResponse } from '@starter/shared';
 import { API_URL, apiGet } from '@/lib/api';
 
 type State =
-  | { kind: 'loading' }
-  | { kind: 'ok'; health: HealthResponse }
-  | { kind: 'error'; message: string };
+  { kind: 'loading' } | { kind: 'ok'; health: HealthResponse } | { kind: 'error'; message: string };
 
 async function fetchHealth(): Promise<State> {
   try {
@@ -39,7 +37,7 @@ export default function Index() {
       {state.kind === 'loading' && <ActivityIndicator />}
       {state.kind === 'ok' && (
         <>
-          <Text style={styles.big}>API ✓  DB ✓</Text>
+          <Text style={styles.big}>API ✓ DB ✓</Text>
           <Text>DB time: {state.health.db.serverTime}</Text>
           <Text>Users: {state.health.db.userCount}</Text>
         </>
@@ -62,6 +60,12 @@ const styles = StyleSheet.create({
   container: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 8, padding: 24 },
   big: { fontSize: 22, fontWeight: '600' },
   muted: { color: '#888', marginTop: 16 },
-  button: { backgroundColor: '#208AEF', paddingHorizontal: 20, paddingVertical: 12, borderRadius: 8, marginTop: 8 },
+  button: {
+    backgroundColor: '#208AEF',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+    marginTop: 8,
+  },
   buttonText: { color: 'white', fontWeight: '600' },
 });

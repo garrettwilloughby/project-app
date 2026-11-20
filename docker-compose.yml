@@ -3,17 +3,17 @@ services:
     image: postgres:17
     env_file: .env
     ports:
-      - "5433:5432"
+      - '5433:5432'
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      test: ['CMD-SHELL', 'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}']
       interval: 2s
       retries: 15
 
   liquibase:
     image: liquibase/liquibase:4.31
-    profiles: ["tools"]
+    profiles: ['tools']
     depends_on:
       db:
         condition: service_healthy

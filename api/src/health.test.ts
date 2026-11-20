@@ -3,7 +3,11 @@ import request from 'supertest';
 import { HealthResponse } from '@starter/shared';
 
 vi.mock('./db', () => ({
-  pool: { query: vi.fn(async () => ({ rows: [{ now: new Date('2026-10-31T00:00:00Z'), user_count: 0 }] })) },
+  pool: {
+    query: vi.fn(async () => ({
+      rows: [{ now: new Date('2026-10-31T00:00:00Z'), user_count: 0 }],
+    })),
+  },
 }));
 const { app } = await import('./app');
 

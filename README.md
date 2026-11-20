@@ -1,12 +1,12 @@
 ## Layout
 
-| Path            | What                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `client/`          | React Native + Expo Router, TypeScript                                                                             |
-| `api/`          | Express, TypeScript. `app.ts` is the app, `server.ts` runs it locally (a Lambda adapter wraps `app.ts` in block 2) |
-| `shared/`       | zod schemas used by both the API and the app                                                                       |
+| Path             | What                                                                                                               |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `client/`        | React Native + Expo Router, TypeScript                                                                             |
+| `api/`           | Express, TypeScript. `app.ts` is the app, `server.ts` runs it locally (a Lambda adapter wraps `app.ts` in block 2) |
+| `shared/`        | zod schemas used by both the API and the app                                                                       |
 | `sql/changelog/` | Liquibase changesets. One file per change; never edit one that has run                                             |
-| `terraform/`        | Terraform (block 2)                                                                                                |
+| `terraform/`     | Terraform (block 2)                                                                                                |
 
 ## Local dev
 
